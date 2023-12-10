@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  api_landing_page:
+    container_name: api_landing_page
+    hostname: api_landing_page
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: Scoulier01
+      POSTGRES_DB: api-strapi-landingpage
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+        - ~/.PostgressData/postgresonly/api_landing_page:/var/lib/postgresql/data/pgdata
+    ports:
+      - 5432:5432
